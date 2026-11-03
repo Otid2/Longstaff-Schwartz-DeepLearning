@@ -5,7 +5,7 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
     dt = T / M
     discount = np.exp(-r * dt)
     
-    # 1. Simulation des trajectoires (Mouvement Brownien Géométrique)
+    # Simulation des trajectoires (Mouvement Brownien Géométrique)
     np.random.seed(42)
     z = np.random.standard_normal((M, N))
     simulated_paths = np.zeros((M + 1, N))
@@ -14,5 +14,13 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
     for t in range(1, M + 1):
         simulated_paths[t] = simulated_paths[t - 1] * np.exp((r - 0.5 * sigma**2) * dt + sigma * np.sqrt(dt) * z[t - 1])
         
-    #gain à maturité pour chaque trajectoire 
+    # Gain à maturité pour chaque trajectoire 
     cashflows = np.maximum(K - simulated_paths[-1], 0) #payoff du put
+    
+    for t in range(M - 1, 0, -1):   #backprop
+        itm = (simulated_paths[t] < K)
+        if np.sum(itm) == 0:
+            continue
+            
+        X = simulated_paths[t][itm]
+        Y = cashflows[itm] * discount
