@@ -5,7 +5,7 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
     dt = T / M
 
 
-
+ef
 
     discount = np.exp(-r * dt)
     
