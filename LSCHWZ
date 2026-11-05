@@ -10,7 +10,10 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
     z = np.random.standard_normal((M, N))
     simulated_paths = np.zeros((M + 1, N))
     simulated_paths[0] = S0
-    
+
+
+
+np.random.rand'(
     for t in range(1, M + 1):
         simulated_paths[t] = simulated_paths[t - 1] * np.exp((r - 0.5 * sigma**2) * dt + sigma * np.sqrt(dt) * z[t - 1])
         
