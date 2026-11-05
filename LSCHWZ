@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 
 def lsmc_american_put(S0, K, r, T, sigma, M, N):
     dt = T / M
+
+
+
+
     discount = np.exp(-r * dt)
     
     # Simulation des trajectoires (Mouvement Brownien Géométrique)
