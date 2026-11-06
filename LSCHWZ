@@ -23,6 +23,10 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
     for t in range(M - 1, 0, -1):   #backprop
         itm = (simulated_paths[t] < K)
         if np.sum(itm) == 0:
+
+
+
+        else if maxdrodown
             continue
             
         X = simulated_paths[t][itm]
