@@ -50,3 +50,6 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
     # 4. Actualisation finale à t = 0
     option_price = np.mean(cashflows * discount)
     return option_price, simulated_paths, vis_data
+
+
+#VISUALSATION
