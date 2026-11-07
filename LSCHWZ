@@ -53,3 +53,9 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
 
 
 #VISUALSATION
+
+# On définit les paramètres du modèle
+
+S0, K, r, T, sigma, M, N = 36, 40, 0.06, 1.0, 0.2, 50, 10000
+price, paths, vis_data = lsmc_american_put(S0, K, r, T, sigma, M, N)
+print(f"Prix estimé de l'option put américaine : {price:.4f}")
