@@ -74,5 +74,6 @@ plt.ylabel("Prix de l'actif sous-jacent")
 plt.legend()
 plt.grid(True)
 
-plt.subplot(1, 2, 2)
-
+if vis_data is not None:
+    plt.subplot(1, 2, 2)
+    X = vis_data['X']
