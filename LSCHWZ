@@ -73,3 +73,6 @@ plt.xlabel("Temps (années)")
 plt.ylabel("Prix de l'actif sous-jacent")
 plt.legend()
 plt.grid(True)
+
+plt.subplot(1, 2, 2)
+
