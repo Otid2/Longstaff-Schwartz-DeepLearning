@@ -59,3 +59,17 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
 S0, K, r, T, sigma, M, N = 36, 40, 0.06, 1.0, 0.2, 50, 10000
 price, paths, vis_data = lsmc_american_put(S0, K, r, T, sigma, M, N)
 print(f"Prix estimé de l'option put américaine : {price:.4f}")
+
+
+
+plt.figure(figsize=(14, 6))
+plt.subplot(1, 2, 1)
+time_grid = np.linspace(0, T, M + 1)
+# On trace seulement 50 trajectoires pour ne pas surcharger l'affichage
+plt.plot(time_grid, paths[:, :50], alpha=0.5)
+plt.axhline(y=K, color='r', linestyle='--', linewidth=2, label=f'Strike K = {K}')
+plt.title("Simulation de Monte-Carlo (50 trajectoires)")
+plt.xlabel("Temps (années)")
+plt.ylabel("Prix de l'actif sous-jacent")
+plt.legend()
+plt.grid(True)
