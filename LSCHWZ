@@ -5,7 +5,8 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
     dt = T / M 
 
     discount = np.exp(-r * dt)
-    
+
+
     # Simulation des trajectoires (Mouvement Brownien Géométrique)
     np.random.seed(42)
     z = np.random.standard_normal((M, N))
