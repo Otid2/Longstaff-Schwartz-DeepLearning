@@ -41,7 +41,9 @@ def lsmc_american_put(S0, K, r, T, sigma, M, N):
                 'continuation_value': continuation_value,
                 'immediate_exercise': K - X
             }
-        
+
+
+
         immediate_exercise = K - X
         exercise_now = immediate_exercise > continuation_value
         
