@@ -78,5 +78,19 @@ plt.legend()
 plt.grid(True)
 
 if vis_data is not None:
+
     plt.subplot(1, 2, 2)
     X = vis_data['X']
+    sort_idx = np.argsort(X) # Tri pour lier les points proprement sur le tracé
+    
+    plt.plot(X[sort_idx], vis_data['continuation_value'][sort_idx], color='orange', linewidth=2, label='Valeur de continuation (Polynôme)')
+    plt.plot(X[sort_idx], vis_data['immediate_exercise'][sort_idx], color='green', linestyle='--', linewidth=2, label='Gain d\'exercice immédiat (K - S)')
+    
+    plt.title(f"Régression de Longstaff-Schwartz à t = {M//2 * (T/M):.2f} ans")
+    plt.xlabel("Prix de l'actif (S_t) pour les points ITM")
+    plt.ylabel("Valeur financière")
+    plt.legend()
+    plt.grid(True)
+
+plt.tight_layout()
+plt.show()
