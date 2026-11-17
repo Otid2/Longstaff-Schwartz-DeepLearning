@@ -73,6 +73,8 @@ time_grid = np.linspace(0, T, M + 1)
 plt.plot(time_grid, paths[:, :50], alpha=0.5)
 plt.axhline(y=K, color='r', linestyle='--', linewidth=2, label=f'Strike K = {K}')
 plt.title("Simulation de Monte-Carlo (50 trajectoires)")
+
+sq
 plt.xlabel("Temps (années)")
 plt.ylabel("Prix de l'actif sous-jacent")
 plt.legend()
