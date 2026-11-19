@@ -90,7 +90,7 @@ if vis_data is not None:
     
     plt.title(f"Régression de Longstaff-Schwartz à t = {M//2 * (T/M):.2f} ans")
     plt.xlabel("Prix de l'actif (S_t) pour les points ITM")*
-    plt.apc[] 
+
     plt.ylabel("Valeur financière")
     plt.legend()
     plt.grid(True)
