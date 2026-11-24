@@ -76,6 +76,8 @@ plt.title("Simulation de Monte-Carlo (50 trajectoires)")
 
 plt.xlabel("Temps (années)")
 plt.ylabel("Prix de l'actif sous-jacent")
+
+>je vais comparer ls a deep
 plt.legend()
 plt.grid(True)
 
